@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvbmqd8g8r57n"]
+
+[ext_resource type="Script" path="res://UI/Question/Question.gd" id="1_5m5lx"]
+
+[node name="Question" type="HBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5m5lx")
+
+[node name="Multiplicand" type="Label" parent="."]
+layout_mode = 2
+
+[node name="x" type="Label" parent="."]
+layout_mode = 2
+text = " × "
+
+[node name="Multiplicator" type="Label" parent="."]
+layout_mode = 2
+
+[node name="=" type="Label" parent="."]
+layout_mode = 2
+text = " = "
+
+[node name="Product" type="SpinBox" parent="."]
+layout_mode = 2
+max_value = 999999.0

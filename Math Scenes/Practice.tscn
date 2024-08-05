@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://digir3ohpw6f2"]
+
+[ext_resource type="Script" path="res://Math Scenes/Practice.gd" id="1_3nu6e"]
+[ext_resource type="PackedScene" uid="uid://bvbmqd8g8r57n" path="res://UI/Question/Question.tscn" id="2_jaq3s"]
+[ext_resource type="PackedScene" uid="uid://b1sle16c7sloe" path="res://UI/AnswerGrid/AnswerGrid.tscn" id="3_mu7d2"]
+[ext_resource type="PackedScene" uid="uid://ckoyffg7itk4a" path="res://UI/Reference Table/Reference Table.tscn" id="4_jromt"]
+
+[node name="Practice" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3nu6e")
+
+[node name="Question" parent="." instance=ExtResource("2_jaq3s")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -68.5
+offset_top = -15.5
+offset_right = 68.5
+offset_bottom = 15.5
+
+[node name="AnswerGrid" parent="." instance=ExtResource("3_mu7d2")]
+layout_mode = 1
+
+[node name="ReferenceTable" parent="." instance=ExtResource("4_jromt")]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -15.0
+offset_bottom = 15.0
+grow_horizontal = 0
+
+[connection signal="changed_answer" from="AnswerGrid" to="." method="_on_changed_answer"]
+[connection signal="selected_answer" from="AnswerGrid" to="." method="_on_selected_answer"]
