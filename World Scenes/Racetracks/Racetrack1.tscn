@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bxuog17l4tspf"]
+[gd_scene load_steps=28 format=3 uid="uid://bxuog17l4tspf"]
 
 [ext_resource type="Script" path="res://World Scenes/Racetracks/Racetrack1.gd" id="1_d3e41"]
 [ext_resource type="PackedScene" uid="uid://ojawcwqatayt" path="res://models/kenney_racing-kit/Models/GLTF format/roadStart.glb" id="1_iyw53"]
@@ -24,10 +24,10 @@
 
 [sub_resource type="Curve3D" id="Curve3D_xyl18"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.270348, 0, -0.373243, 0, 0, 0, 0, 0, 0, 0.250602, 0, -0.870229, 0, 0, 0, 0, 0, 0, 0.262908, 0.06604, -5.88832, 0, 0, 0, 0, 0, 0, 0.250548, 0.572754, -7.51985, 0, 0, 0, 0, 0, 0, 0.315316, 0.560425, -12.3866, 0.370801, 0, 1.48321, -0.370801, 0, -1.48321, 0.134049, 0.0360107, -15.4099, 0.894055, 0, -1.0827, -0.894055, 0, 1.0827, -3.93241, -0.0118408, -16.0649, 0, 0, 0, 0, 0, 0, -4.45551, -0.0584602, -12.1301, -2.15538, 0, 0.00540257, 2.15538, 0, -0.00540257, -2.24321, -0.0688477, -10.1124, 0, 0, 0, 0, 0, 0, 3.03453, -0.0366211, -10.1248, -0.392515, 0, -1.60909, 0.392515, 0, 1.60909, 5.26396, -0.0578613, -8.21361, 0, 0, 0, 0, 0, 0, 5.23909, -0.00817871, -0.0271614, 1.30785, -1.57356e-05, 0.0997334, -1.30785, 1.57356e-05, -0.0997334, 2.95479, -0.0204921, 1.83838, 0, 0, 0, 0, 0, 0, 0.278712, 0, -0.337006),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -0.0129638, 0)
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.267517, 0, -0.469623, 0, 0, 0, 0, 0, 0, 0.250602, 0, -0.870229, 0, 0, 0, 0, 0, 0, 0.262908, 0.06604, -5.88832, 0, 0, 0, 0, 0, 0, 0.250548, 0.572754, -7.51985, 0, 0, 0, 0, 0, 0, 0.315316, 0.560425, -12.3866, 0.370801, 0, 1.48321, -0.370801, 0, -1.48321, 0.134049, 0.0360107, -15.4099, 0.894055, 0, -1.0827, -0.894055, 0, 1.0827, -3.93241, -0.0118408, -16.0649, 0, 0, 0, 0, 0, 0, -4.45551, -0.0584602, -12.1301, -2.15538, 0, 0.00540257, 2.15538, 0, -0.00540257, -2.24321, -0.0688477, -10.1124, 0, 0, 0, 0, 0, 0, 3.03453, -0.0366211, -10.1248, -0.392515, 0, -1.60909, 0.392515, 0, 1.60909, 5.26396, -0.0578613, -8.21361, 0, 0, 0, 0, 0, 0, 5.23909, -0.00817871, -0.0271614, 1.30785, -1.57356e-05, 0.0997334, -1.30785, 1.57356e-05, -0.0997334, 2.95479, -0.0204921, 1.83838, 0, 0, 0, 0, 0, 0, 0.778465, 0, 0.841811, 0, 0, 0, 0, 0, 0, 0.267517, 0, -0.469623),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -0.0129638, -0.0468744, 0)
 }
-point_count = 14
+point_count = 15
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_to61y"]
 albedo_color = Color(0.478431, 0.772549, 0.4, 1)
@@ -37,6 +37,21 @@ metallic_specular = 0.0
 material = SubResource("StandardMaterial3D_to61y")
 size = Vector2(20, 30)
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mi05c"]
+sky_top_color = Color(0.682353, 0.85098, 0.94902, 1)
+sky_horizon_color = Color(0.407843, 0.690196, 0.87451, 1)
+ground_bottom_color = Color(0, 0.639216, 0.337255, 1)
+ground_horizon_color = Color(0.584314, 0.843137, 0.654902, 1)
+
+[sub_resource type="Sky" id="Sky_oys43"]
+sky_material = SubResource("ProceduralSkyMaterial_mi05c")
+
+[sub_resource type="Environment" id="Environment_puqjr"]
+background_mode = 2
+sky = SubResource("Sky_oys43")
+sky_custom_fov = 122.4
+fog_light_color = Color(0.54902, 0.807843, 0.968627, 1)
+
 [node name="Racetrack1" type="Node3D"]
 script = ExtResource("1_d3e41")
 
@@ -44,6 +59,7 @@ script = ExtResource("1_d3e41")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.11096, 0, 0.166312)
 
 [node name="Track" type="Node3D" parent="."]
+visible = false
 
 [node name="Start" type="Node3D" parent="Track"]
 
@@ -165,8 +181,12 @@ editor_description = "Player Pathfollow"
 [node name="raceCarRed" parent="Path3D/PathFollow3D" instance=ExtResource("19_pvt0p")]
 transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, 0.0624733, 0, 0.0731246)
 
+[node name="Camera3D" type="Camera3D" parent="Path3D/PathFollow3D/raceCarRed"]
+transform = Transform3D(-2, 4.52534e-08, -1.68888e-07, 0, 1.93185, 0.517638, 1.74846e-07, 0.517638, -1.93185, -0.359213, 1.3816, -2.64739)
+
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(-4.37114e-08, -0.707107, 0.707107, 0, 0.707107, 0.707107, -1, 3.09086e-08, -3.09086e-08, 8.69745, 6.42196, -5.82132)
+visible = false
 size = 12.0
 far = 50.0
 
@@ -208,3 +228,6 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.482
 
 [node name="grandStand9" parent="Stands" instance=ExtResource("21_ahop0")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.48267, 0, -14.4729)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_puqjr")
